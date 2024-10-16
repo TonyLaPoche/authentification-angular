@@ -8,14 +8,18 @@ import {RouterOutlet} from "@angular/router";
     RouterOutlet
   ],
   template: `
-    <router-outlet></router-outlet>
+      <main class="main-container">
+          <router-outlet></router-outlet>
+      </main>
   `,
   styles: `
     :host {
       flex-grow: 1;
+      text-align: center;
     }
 
     .main-container {
+      margin-top: 70px;
       display: flex;
       flex-direction: column;
       height: 100%;

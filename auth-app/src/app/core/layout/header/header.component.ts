@@ -14,7 +14,8 @@ import {RouterLink} from "@angular/router";
     <mat-toolbar class="head-container">
       <a routerLink="home" class="head-button" aria-label="title" aria-description="training app">Accueil</a>
       <span class="head-spacer"></span>
-      <a routerLink="movie" class="head-button" aria-label="title" aria-description="training app">Movies</a>
+      <a routerLink="movies" class="head-button" aria-label="title" aria-description="training app">Movies</a>
+      <a routerLink="authentication" class="head-button" aria-label="title" aria-description="authentication app">login</a>
     </mat-toolbar>
   `,
   styles: `
