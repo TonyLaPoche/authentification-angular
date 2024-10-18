@@ -20,6 +20,8 @@ export const appConfig: ApplicationConfig = {
             authorizationParams: {
                 redirect_uri: authConfig.redirectUri
             },
+            cacheLocation:'memory',
+            useRefreshTokens:true,
         })
     ]
 };

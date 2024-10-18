@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {RouterLink} from "@angular/router";
-import {AuthService} from "@auth0/auth0-angular";
 import {AsyncPipe} from "@angular/common";
+import {AuthCustomService} from "../../core/auth/auth-custom.service";
 
 @Component({
   selector: 'app-home',
@@ -12,10 +12,14 @@ import {AsyncPipe} from "@angular/common";
   ],
   template: `
     <h1>
-      home works!
+      Movie Center
     </h1>
     <p>
-      {{authServices.isAuthenticated$ | async}}
+      @if (authCustomServices.isLogged()) {
+        Bonjour {{ user?.given_name }} !
+      } @else {
+        pour aller plus loin identifier vous !
+      }
     </p>
     <section>
       <a routerLink="/authentication" aria-label="link" aria-description="authentification pages">connect</a>
@@ -32,6 +36,6 @@ import {AsyncPipe} from "@angular/common";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
-  authServices = inject(AuthService);
-
+  authCustomServices = inject(AuthCustomService);
+  user = this.authCustomServices.getUserInfo()
 }
